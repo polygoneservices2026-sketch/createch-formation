@@ -1,140 +1,171 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CreaTech Formation</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CreaTech Formation 2026</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #0077ff;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    header h1 { margin: 0; font-size: 2em; }
+    header p { font-size: 1.2em; }
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    .container {
+      width: 95%;
+      max-width: 900px;
+      margin: 20px auto;
+    }
 
-<style>
-body {
-  margin: 0;
-  font-family: 'DM Sans', sans-serif;
-  background: #0C0F1C;
-  color: #F7F6F2;
-}
+    .accordion-btn {
+      cursor: pointer;
+      background: #005bb5;
+      color: #fff;
+      padding: 15px;
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-size: 1.1em;
+      margin-bottom: 5px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    .accordion-btn:hover {
+      background: #004494;
+    }
 
-header {
-  padding: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
+    .panel {
+      display: none;
+      background: #e0e0e0;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
 
-h1 {
-  font-family: 'Syne', sans-serif;
-  font-size: 32px;
-}
+    .panel ul { padding-left: 20px; }
+    .panel img { max-width: 100%; border-radius: 8px; margin-top: 10px; }
 
-.hero {
-  height: 250px;
-  background: url('https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=1200') center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
+    .contact {
+      background: #0077ff;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
 
-.hero h2 {
-  font-size: 28px;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 10px 20px;
-}
+    .contact a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-.section {
-  padding: 30px;
-}
-
-.card {
-  background: #111627;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-}
-
-.card h3 {
-  margin-top: 0;
-}
-
-.card img {
-  width: 100%;
-  border-radius: 10px;
-  margin-top: 10px;
-}
-
-.footer {
-  padding: 20px;
-  text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* WhatsApp Button */
-.whatsapp-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: white;
-  padding: 12px 16px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 500;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  z-index: 999;
-}
-</style>
+    .highlight { font-weight: bold; color: #0077ff; }
+  </style>
 </head>
 <body>
 
 <header>
-  <h1>CREA<span style="color:#00FFE8">TECH</span></h1>
-  <div>Session 2026</div>
+  <h1>CreaTech – Formation 2026</h1>
+  <p>Apprenez aujourd’hui, pour réussir demain !</p>
 </header>
 
-<div class="hero">
-  <h2>Apprenez aujourd'hui, brillez demain</h2>
+<div class="container">
+
+  <!-- Informatique & Bureautique -->
+  <button class="accordion-btn">💻 Informatique & Bureautique</button>
+  <div class="panel">
+    <p>Cette formation vous permettra de maîtriser les outils essentiels pour votre vie académique et professionnelle.</p>
+    <ul>
+      <li>Word – Rédaction et mise en forme de documents professionnels</li>
+      <li>Excel – Tableaux, formules et gestion des données</li>
+      <li>PowerPoint – Création de présentations attractives</li>
+      <li>Langage C – Bases de la programmation informatique</li>
+    </ul>
+    <img src="https://images.unsplash.com/photo-1581091215365-1f6f8c2079c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTI2MTZ8MHwxfGFsbHwxfHxjb21wdXRlcmluZ3xlbnwwfHx8fDE2OTE4NDQxNjc&ixlib=rb-4.0.3&q=80&w=600" alt="Informatique">
+  </div>
+
+  <!-- Intelligence Artificielle -->
+  <button class="accordion-btn">🤖 Intelligence Artificielle</button>
+  <div class="panel">
+    <p>Apprenez à exploiter l’IA pour optimiser vos tâches, résoudre des problèmes et booster votre productivité.</p>
+    <ul>
+      <li>Introduction à l’IA et ses applications professionnelles</li>
+      <li>Utilisation de l’IA pour la prise de décision et l’analyse de données</li>
+      <li>Automatisation des tâches répétitives</li>
+    </ul>
+    <img src="https://images.unsplash.com/photo-1581091215365-1f6f8c2079c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTI2MTZ8MHwxfGFsbHwxfHxkYXRhJTIwYW5hbHlzaXN8ZW58MHx8fHwxNjkxODQ0MTY3&ixlib=rb-4.0.3&q=80&w=600" alt="Intelligence Artificielle">
+  </div>
+
+  <!-- Résine Époxy & Perlage -->
+  <button class="accordion-btn">🎨 Résine Époxy & Perlage</button>
+  <div class="panel">
+    <p>Créez vos propres bijoux, objets décoratifs et cadeaux personnalisés. Formation pratique incluant tous les outils.</p>
+    <ul>
+      <li>Techniques de résine époxy pour objets décoratifs</li>
+      <li>Perlage – Création de bijoux et accessoires</li>
+      <li><span class="highlight">Polo CreaTech offert pour les 10 premiers inscrits 👕</span></li>
+    </ul>
+    <img src="https://images.unsplash.com/photo-1598300052820-bc2856118489?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTI2MTZ8MHwxfGFsbHwyfHxwZXJsYWdlfGVufDB8fHx8MTY5MTg0NDE2Nw&ixlib=rb-4.0.3&q=80&w=600" alt="Résine Époxy & Perlage">
+  </div>
+
+  <!-- Robotique -->
+  <button class="accordion-btn">🤖 Robotique</button>
+  <div class="panel">
+    <p>Apprenez à concevoir et programmer des robots pour des projets ludiques et professionnels.</p>
+    <ul>
+      <li>Fabrication de robots simples et avancés</li>
+      <li>Programmation et contrôle des mouvements</li>
+      <li>Introduction à l’électronique et capteurs</li>
+    </ul>
+    <img src="https://images.unsplash.com/photo-1581091215365-1f6f8c2079c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTI2MTZ8MHwxfGFsbHwzfHxyb2JvdGlxdWV8ZW58MHx8fHwxNjkxODQ0MTY3&ixlib=rb-4.0.3&q=80&w=600" alt="Robotique">
+  </div>
+
+  <!-- Mécanique Automobile -->
+  <button class="accordion-btn">🚗 Mécanique Automobile</button>
+  <div class="panel">
+    <p>Formation pratique pour le diagnostic, l’entretien et la réparation de véhicules.</p>
+    <ul>
+      <li>Diagnostic des pannes mécaniques et électriques</li>
+      <li>Entretien courant et préventif</li>
+      <li>Approche professionnelle et méthodique</li>
+    </ul>
+    <img src="https://images.unsplash.com/photo-1611095564985-2c51959d7021?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTI2MTZ8MHwxfGFsbHw0fHxhdXRvbW9iaWxlfGVufDB8fHx8MTY5MTg0NDE2Nw&ixlib=rb-4.0.3&q=80&w=600" alt="Mécanique Automobile">
+  </div>
+
+  <!-- Bonus et Collations -->
+  <button class="accordion-btn">✨ Bonus & Services</button>
+  <div class="panel">
+    <ul>
+      <li>Langue anglaise – Développement de compétences linguistiques professionnelles</li>
+      <li>Fabrication des produits laitiers – Initiation pratique</li>
+      <li>Collations professionnelles servies pendant les pauses, pour maintenir énergie et concentration</li>
+    </ul>
+  </div>
+
 </div>
 
-<div class="section">
-  <div class="card">
-    <h3>💻 Informatique</h3>
-    <p>Word, Excel, PowerPoint, HTML, JavaScript, Langage C</p>
-  </div>
-
-  <div class="card">
-    <h3>🤖 Intelligence Artificielle</h3>
-    <p>Utiliser l'IA pour résoudre des problèmes et booster sa productivité</p>
-  </div>
-
-  <div class="card">
-    <h3>🎨 Résine Époxy & Perlage</h3>
-    <img src="https://images.unsplash.com/photo-1603575448364-bf62b4c4f7a5?w=800" alt="Résine Époxy & Perlage">
-    <p>Création d'objets, bijoux et décoration</p>
-  </div>
-
-  <div class="card">
-    <h3>⚙️ Robotique</h3>
-    <p>Fabrication et programmation de robots</p>
-  </div>
-
-  <div class="card">
-    <h3>🔧 Mécanique Automobile</h3>
-    <p>Diagnostic et entretien de véhicules</p>
-  </div>
+<div class="contact">
+  <p>📞 Contactez-nous : 677 065 865 / 693 330 888</p>
+  <p>💬 WhatsApp : <a href="https://wa.me/237677065865">Cliquez ici pour discuter</a></p>
 </div>
 
-<div class="footer">
-  📞 677 065 865 / 693 330 888 <br>
-  📍 PK10 - Douala
-</div>
-
-<!-- WhatsApp Button -->
-<a href="https://wa.me/237677065865?text=Bonjour%2C%20je%20veux%20des%20informations%20sur%20vos%20formations" target="_blank" class="whatsapp-btn">
-  💬 WhatsApp
-</a>
+<script>
+  const acc = document.querySelectorAll('.accordion-btn');
+  acc.forEach(btn => btn.addEventListener('click', () => {
+    const panel = btn.nextElementSibling;
+    panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+  }));
+</script>
 
 </body>
-  </html>
+</html>
