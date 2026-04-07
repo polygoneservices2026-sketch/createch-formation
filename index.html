@@ -1,171 +1,347 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CreaTech Formation 2026</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: #0077ff;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-    }
-    header h1 { margin: 0; font-size: 2em; }
-    header p { font-size: 1.2em; }
-
-    .container {
-      width: 95%;
-      max-width: 900px;
-      margin: 20px auto;
-    }
-
-    .accordion-btn {
-      cursor: pointer;
-      background: #005bb5;
-      color: #fff;
-      padding: 15px;
-      border: none;
-      width: 100%;
-      text-align: left;
-      font-size: 1.1em;
-      margin-bottom: 5px;
-      border-radius: 8px;
-      transition: background 0.3s;
-    }
-    .accordion-btn:hover {
-      background: #004494;
-    }
-
-    .panel {
-      display: none;
-      background: #e0e0e0;
-      padding: 15px;
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
-
-    .panel ul { padding-left: 20px; }
-    .panel img { max-width: 100%; border-radius: 8px; margin-top: 10px; }
-
-    .contact {
-      background: #0077ff;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-      border-radius: 8px;
-      margin-top: 20px;
-    }
-
-    .contact a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .highlight { font-weight: bold; color: #0077ff; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CréaTech Formation</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #eef2f7;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 20px;
+    min-height: 100vh;
+  }
+  .poster {
+    max-width: 1100px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.35);
+    animation: fadeSlideUp 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  }
+  @keyframes fadeSlideUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  .header {
+    background: linear-gradient(135deg, #0a2a5e 0%, #1a4a8e 70%, #0a2a5e 100%);
+    padding: 24px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .logo-icon { display: flex; align-items: center; gap: 10px; }
+  .logo-text { font-family: 'Montserrat', sans-serif; font-size: 42px; font-weight: 900; }
+  .logo-crea { color: #ffffff; }
+  .logo-tech { color: #f5a623; }
+  .logo-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 4px;
+    border-top: 1.5px solid rgba(255,255,255,0.4);
+    border-bottom: 1.5px solid rgba(255,255,255,0.4);
+    padding: 3px 8px;
+    margin-top: 6px;
+  }
+  .slogan {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: #f5a623;
+    letter-spacing: 2.5px;
+    margin-top: 6px;
+  }
+  .header-photo {
+    width: 280px;
+    height: 160px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 3px solid #f5a623;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .header-photo:hover { transform: scale(1.02); }
+  .header-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .hero {
+    background: linear-gradient(135deg, #0d3272 0%, #1a5ca8 100%);
+    padding: 22px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .hero-title { font-family: 'Montserrat', sans-serif; font-size: 23px; font-weight: 800; color: #ffffff; }
+  .hero-title span { color: #ffd166; }
+  .hero-desc { margin-top: 10px; font-size: 12.5px; color: rgba(255,255,255,0.92); max-width: 360px; }
+  .hero-badge {
+    background: linear-gradient(135deg, #f5a623, #e8920d);
+    border-radius: 12px;
+    padding: 14px 18px;
+  }
+  .hero-badge p { font-family: 'Montserrat', sans-serif; font-weight: 800; color: #0a2a5e; }
+  .periode-bar {
+    background: #0a2a5e;
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .periode-label { font-family: 'Montserrat'; font-weight: 700; color: #f5a623; }
+  .periode-value { font-family: 'Montserrat'; font-weight: 800; color: white; }
+  .formations {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    background: #eef2fa;
+  }
+  .formation-card {
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  .formation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.2);
+  }
+  .card-header { padding: 10px 12px; display: flex; align-items: center; gap: 8px; }
+  .card-header-title { font-family: 'Montserrat'; font-weight: 800; color: white; text-transform: uppercase; font-size: 11.5px; }
+  .card-img-placeholder { height: 115px; overflow: hidden; }
+  .card-img-placeholder img { width: 100%; height: 115px; object-fit: cover; }
+  .card-body { padding: 10px 12px; background: white; }
+  .card-body p { font-size: 11px; color: #444; line-height: 1.55; }
+  .card-cta { font-family: 'Montserrat'; font-size: 10.5px; font-weight: 800; margin-top: 8px; padding-top: 8px; border-top: 1.5px solid #eee; text-align: center; }
+  .card-blue .card-header { background: #1a4a8e; }
+  .card-green .card-header { background: #2d7d32; }
+  .card-orange .card-header { background: #e07b1a; }
+  .card-purple .card-header { background: #6a3d9a; }
+  .card-blue .card-cta { color: #1a4a8e; }
+  .card-green .card-cta { color: #2d7d32; }
+  .card-orange .card-cta { color: #e07b1a; }
+  .card-purple .card-cta { color: #6a3d9a; }
+    .polo-section {
+    background: #f8f4ff;
+    padding: 16px 30px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex-wrap: wrap;
+  }
+  .polo-text h3 { font-family: 'Montserrat'; font-size: 15px; font-weight: 900; color: #6a3d9a; }
+  .polo-text h3 span { color: #f5a623; }
+  .bonus-section {
+    background: linear-gradient(135deg, #1a4a8e, #0d3272);
+    padding: 14px 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .bonus-tag { background: #f5a623; padding: 5px 12px; border-radius: 4px; font-weight: 900; color: #0a2a5e; }
+  .bonus-items { display: flex; gap: 18px; flex-wrap: wrap; }
+  .bonus-item { color: white; font-weight: 600; font-size: 11.5px; }
+  .features-bar {
+    background: #1a3a6e;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .feature-item { color: white; font-size: 11px; font-weight: 700; }
+  .cta-section {
+    background: #f8f9fc;
+    padding: 18px 30px;
+    text-align: center;
+  }
+  .cta-btn {
+    background: linear-gradient(135deg, #f5a623, #e8920d);
+    display: inline-block;
+    padding: 14px 40px;
+    border-radius: 50px;
+    font-weight: 900;
+    font-family: 'Montserrat';
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  .cta-btn:hover { transform: scale(1.02); box-shadow: 0 10px 28px rgba(245,166,35,0.6); }
+  .footer {
+    background: #0a2a5e;
+    padding: 16px 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: white;
+  }
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 42, 94, 0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  .modal-overlay.active { opacity: 1; visibility: visible; }
+  .modal-content {
+    background: white;
+    max-width: 500px;
+    width: 90%;
+    border-radius: 32px;
+    overflow: hidden;
+    transform: scale(0.9);
+    animation: modalPop 0.3s forwards;
+  }
+  @keyframes modalPop { to { transform: scale(1); } }
+  .modal-header {
+    background: linear-gradient(120deg, #0a2a5e, #1a4a8e);
+    padding: 20px 24px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+  }
+  .close-modal {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    color: white;
+  }
+  .modal-body { padding: 24px; }
+  .modal-img { width: 100%; height: 180px; object-fit: cover; border-radius: 20px; margin-bottom: 20px; }
+  .modal-desc { font-size: 15px; margin-bottom: 16px; }
+  .modal-details-list { list-style: none; }
+  .modal-details-list li { margin: 10px 0; display: flex; align-items: center; gap: 12px; }
+  .modal-cta {
+    background: #f5a623;
+    width: 100%;
+    padding: 12px;
+    border-radius: 40px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  @media (max-width: 860px) {
+    .formations { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 550px) {
+    .formations { grid-template-columns: 1fr; }
+  }
+</style>
 </head>
 <body>
-
-<header>
-  <h1>CreaTech – Formation 2026</h1>
-  <p>Apprenez aujourd’hui, pour réussir demain !</p>
-</header>
-
-<div class="container">
-
-  <!-- Informatique & Bureautique -->
-  <button class="accordion-btn">💻 Informatique & Bureautique</button>
-  <div class="panel">
-    <p>Cette formation vous permettra de maîtriser les outils essentiels pour votre vie académique et professionnelle.</p>
-    <ul>
-      <li>Word – Rédaction et mise en forme de documents professionnels</li>
-      <li>Excel – Tableaux, formules et gestion des données</li>
-      <li>PowerPoint – Création de présentations attractives</li>
-      <li>Langage C – Bases de la programmation informatique</li>
-    </ul>
-    <img src="https://images.unsplash.com/photo-1581091215365-1f6f8c2079c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTI2MTZ8MHwxfGFsbHwxfHxjb21wdXRlcmluZ3xlbnwwfHx8fDE2OTE4NDQxNjc&ixlib=rb-4.0.3&q=80&w=600" alt="Informatique">
+<div class="poster">
+  <div class="header">
+    <div class="logo-area">
+      <div class="logo-icon">
+        <svg width="52" height="52" viewBox="0 0 60 60" fill="none">
+          <circle cx="30" cy="30" r="28" fill="none" stroke="#f5a623" stroke-width="2"/>
+          <circle cx="30" cy="30" r="14" fill="none" stroke="#f5a623" stroke-width="2.5"/>
+          <circle cx="30" cy="30" r="8" fill="#f5a623" opacity="0.15"/>
+        </svg>
+        <div><div class="logo-text"><span class="logo-crea">Créa</span><span class="logo-tech">Tech</span></div></div>
+      </div>
+      <div class="logo-sub">FORMATION</div>
+      <div class="slogan">Apprenez aujourd'hui • Brillez demain</div>
+    </div>
+    <div class="header-photo">
+      <img src="https://picsum.photos/id/26/400/250" alt="Atelier">
+    </div>
   </div>
-
-  <!-- Intelligence Artificielle -->
-  <button class="accordion-btn">🤖 Intelligence Artificielle</button>
-  <div class="panel">
-    <p>Apprenez à exploiter l’IA pour optimiser vos tâches, résoudre des problèmes et booster votre productivité.</p>
-    <ul>
-      <li>Introduction à l’IA et ses applications professionnelles</li>
-      <li>Utilisation de l’IA pour la prise de décision et l’analyse de données</li>
-      <li>Automatisation des tâches répétitives</li>
-    </ul>
-    <img src="https://images.unsplash.com/photo-1581091215365-1f6f8c2079c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTI2MTZ8MHwxfGFsbHwxfHxkYXRhJTIwYW5hbHlzaXN8ZW58MHx8fHwxNjkxODQ0MTY3&ixlib=rb-4.0.3&q=80&w=600" alt="Intelligence Artificielle">
+    <div class="hero">
+    <div><div class="hero-title">Des compétences d'avenir,<br><span>une vie meilleure !</span></div>
+    <p class="hero-desc">CréaTech Formation vous offre des formations pratiques et innovantes pour vous rendre autonome.</p></div>
+    <div class="hero-badge"><p>FORMATIONS<br>PRATIQUES<br>CERTIFIANTES</p></div>
   </div>
-
-  <!-- Résine Époxy & Perlage -->
-  <button class="accordion-btn">🎨 Résine Époxy & Perlage</button>
-  <div class="panel">
-    <p>Créez vos propres bijoux, objets décoratifs et cadeaux personnalisés. Formation pratique incluant tous les outils.</p>
-    <ul>
-      <li>Techniques de résine époxy pour objets décoratifs</li>
-      <li>Perlage – Création de bijoux et accessoires</li>
-      <li><span class="highlight">Polo CreaTech offert pour les 10 premiers inscrits 👕</span></li>
-    </ul>
-    <img src="https://images.unsplash.com/photo-1598300052820-bc2856118489?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTI2MTZ8MHwxfGFsbHwyfHxwZXJsYWdlfGVufDB8fHx8MTY5MTg0NDE2Nw&ixlib=rb-4.0.3&q=80&w=600" alt="Résine Époxy & Perlage">
+  <div class="periode-bar">
+    <span class="periode-label">📅 Période</span>
+    <span class="periode-value">15 MAI 2026 — 15 JUILLET 2026</span>
   </div>
-
-  <!-- Robotique -->
-  <button class="accordion-btn">🤖 Robotique</button>
-  <div class="panel">
-    <p>Apprenez à concevoir et programmer des robots pour des projets ludiques et professionnels.</p>
-    <ul>
-      <li>Fabrication de robots simples et avancés</li>
-      <li>Programmation et contrôle des mouvements</li>
-      <li>Introduction à l’électronique et capteurs</li>
-    </ul>
-    <img src="https://images.unsplash.com/photo-1581091215365-1f6f8c2079c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTI2MTZ8MHwxfGFsbHwzfHxyb2JvdGlxdWV8ZW58MHx8fHwxNjkxODQ0MTY3&ixlib=rb-4.0.3&q=80&w=600" alt="Robotique">
+  <div class="formations">
+    <div class="formation-card card-blue" data-modal="info">
+      <div class="card-header"><span class="card-header-title">Informatique & IA</span></div>
+      <div class="card-img-placeholder"><img src="https://picsum.photos/id/0/200/120" alt="info"></div>
+      <div class="card-body"><p>Maîtrisez Word, Excel, PowerPoint, IA générative. Devenez expert numérique.</p><div class="card-cta">✨ Cliquez pour explorer</div></div>
+    </div>
+    <div class="formation-card card-green" data-modal="robot">
+      <div class="card-header"><span class="card-header-title">Robotique</span></div>
+      <div class="card-img-placeholder"><img src="https://picsum.photos/id/1/200/120" alt="robot"></div>
+      <div class="card-body"><p>Assemblez, programmez des voitures robotisées. Électronique, capteurs.</p><div class="card-cta">🤖 Cliquez détails</div></div>
+    </div>
+    <div class="formation-card card-orange" data-modal="meca">
+      <div class="card-header"><span class="card-header-title">Mécanique</span></div>
+      <div class="card-img-placeholder"><img src="https://picsum.photos/id/20/200/120" alt="meca"></div>
+      <div class="card-body"><p>Diagnostic, réparation automobile, entretien pro.</p><div class="card-cta">🔧 Cliquez</div></div>
+    </div>
+    <div class="formation-card card-purple" data-modal="resine">
+      <div class="card-header"><span class="card-header-title">Perlage & Résine</span></div>
+      <div class="card-img-placeholder"><img src="https://picsum.photos/id/29/200/120" alt="resine"></div>
+      <div class="card-body"><p>Bijoux en perles, résine époxy, créations uniques.</p><div class="card-cta">💎 Cliquez</div></div>
+    </div>
   </div>
-
-  <!-- Mécanique Automobile -->
-  <button class="accordion-btn">🚗 Mécanique Automobile</button>
-  <div class="panel">
-    <p>Formation pratique pour le diagnostic, l’entretien et la réparation de véhicules.</p>
-    <ul>
-      <li>Diagnostic des pannes mécaniques et électriques</li>
-      <li>Entretien courant et préventif</li>
-      <li>Approche professionnelle et méthodique</li>
-    </ul>
-    <img src="https://images.unsplash.com/photo-1611095564985-2c51959d7021?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTI2MTZ8MHwxfGFsbHw0fHxhdXRvbW9iaWxlfGVufDB8fHx8MTY5MTg0NDE2Nw&ixlib=rb-4.0.3&q=80&w=600" alt="Mécanique Automobile">
+  <div class="polo-section">
+    <div><svg width="80" height="80" viewBox="0 0 80 80"><path d="M18 28 L10 50 L18 52 L18 75 L62 75 L62 52 L70 50 L62 28 L52 22 L40 26 L28 22 Z" fill="#111"/></svg></div>
+    <div class="polo-text"><h3>🎁 Polo gratuit pour les <span>10 premiers</span> inscrits !</h3><p>Les 10 premiers apprenants recevront un polo CréaTech Formation offert.</p></div>
   </div>
-
-  <!-- Bonus et Collations -->
-  <button class="accordion-btn">✨ Bonus & Services</button>
-  <div class="panel">
-    <ul>
-      <li>Langue anglaise – Développement de compétences linguistiques professionnelles</li>
-      <li>Fabrication des produits laitiers – Initiation pratique</li>
-      <li>Collations professionnelles servies pendant les pauses, pour maintenir énergie et concentration</li>
-    </ul>
-  </div>
-
+  <div class="bonus-section"><div class="bonus-tag">🎉 Bonus inclus</div><div class="bonus-items"><div class="bonus-item">📘 Anglais offert</div><div class="bonus-item">🥛 Produits laitiers offerts</div><div class="bonus-item">🍎 Collations offertes</div></div></div>
+  <div class="features-bar"><div class="feature-item">✅ 100% Pratique</div><div class="feature-item">📜 Attestation</div><div class="feature-item">👥 Petits groupes</div></div>
+  <div class="cta-section"><div class="cta-btn">Inscrivez-vous dès maintenant !</div><div style="margin-top:10px;">📞 677 065 865 / 693 330 888</div></div>
+  <div class="footer"><div>📍 Pk10 en face boulangerie Saker</div><div>✉️ contact@createchformation.com</div></div>
 </div>
-
-<div class="contact">
-  <p>📞 Contactez-nous : 677 065 865 / 693 330 888</p>
-  <p>💬 WhatsApp : <a href="https://wa.me/237677065865">Cliquez ici pour discuter</a></p>
-</div>
-
+<div id="modalOverlay" class="modal-overlay"><div class="modal-content"><div class="modal-header"><h3 id="modalTitle"></h3><button class="close-modal">&times;</button></div><div class="modal-body"><img id="modalImg" class="modal-img"><div id="modalDesc"></div><ul id="modalList"></ul><button id="modalCtaBtn" class="modal-cta">📞 Je m'inscris</button></div></div></div>
 <script>
-  const acc = document.querySelectorAll('.accordion-btn');
-  acc.forEach(btn => btn.addEventListener('click', () => {
-    const panel = btn.nextElementSibling;
-    panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
-  }));
+  const formationsData = {
+    info: { title: "💻 Informatique & IA", img: "https://picsum.photos/id/106/500/280", desc: "Devenez autonome avec les outils bureautiques et l'IA générative.", details: ["✅ Word : CV, rapports", "✅ Excel : tableaux, formules", "✅ PowerPoint pro", "✅ Initiation ChatGPT"] },
+    robot: { title: "🤖 Robotique", img: "https://picsum.photos/id/2/500/280", desc: "Montez des circuits, programmez Arduino, créez des robots mobiles.", details: ["🔧 Assemblage voitures robotisées", "💡 Programmation capteurs", "📡 Suiveur de ligne", "🏆 Projet final"] },
+    meca: { title: "🔧 Mécanique", img: "https://picsum.photos/id/21/500/280", desc: "Diagnostic, entretien, réparation automobile.", details: ["🛠️ Outils et sécurité", "🚗 Moteurs essence/diesel", "🔩 Freins, vidange", "✅ Atelier pratique"] },
+    resine: { title: "✨ Résine & Perlage", img: "https://picsum.photos/id/30/500/280", desc: "Créez bijoux, sous-verres, objets décoratifs en résine.", details: ["💎 Mélange et couleurs", "🌸 Inclusions florales", "📿 Perlage avancé", "🎁 Vente de créations"] }
+  };
+  const modalOverlay = document.getElementById('modalOverlay');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalImg = document.getElementById('modalImg');
+  const modalDesc = document.getElementById('modalDesc');
+  const modalList = document.getElementById('modalList');
+  const closeModalBtn = document.querySelector('.close-modal');
+  const modalCta = document.getElementById('modalCtaBtn');
+  function openModal(key) {
+    const d = formationsData[key];
+    if(!d) return;
+    modalTitle.innerText = d.title;
+    modalImg.src = d.img;
+    modalDesc.innerText = d.desc;
+    modalList.innerHTML = d.details.map(item => `<li>✔️ ${item}</li>`).join('');
+    modalOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  document.querySelectorAll('.formation-card').forEach(card => {
+    const modalRef = card.getAttribute('data-modal');
+    if(modalRef) card.addEventListener('click', () => openModal(modalRef));
+  });
+  function closeModal() { modalOverlay.classList.remove('active'); document.body.style.overflow = ''; }
+  closeModalBtn.addEventListener('click', closeModal);
+  modalOverlay.addEventListener('click', (e) => { if(e.target === modalOverlay) closeModal(); });
+  modalCta.addEventListener('click', () => { alert("📞 Contactez-nous au 677 065 865 / 693 330 888 pour valider votre inscription !"); closeModal(); });
+  document.querySelector('.cta-btn').addEventListener('click', () => alert("🎯 Réservez votre place ! Appelez-nous au 677 065 865."));
+  document.querySelector('.header-photo').addEventListener('click', () => alert("🌟 Bienvenue dans l'atelier CréaTech !"));
 </script>
-
 </body>
 </html>
