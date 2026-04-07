@@ -240,7 +240,6 @@
     cursor: pointer;
     margin-top: 20px;
   }
-  /* Formulaire inscription */
   .form-overlay {
     position: fixed;
     top: 0;
@@ -356,12 +355,10 @@
   <div class="bonus-section"><div class="bonus-tag">🎉 Bonus inclus</div><div class="bonus-items"><div class="bonus-item">📘 Anglais offert</div><div class="bonus-item">🥛 Produits laitiers offerts</div><div class="bonus-item">🍎 Collations offertes</div></div></div>
   <div class="features-bar"><div class="feature-item">✅ 100% Pratique</div><div class="feature-item">📜 Attestation</div><div class="feature-item">👥 Petits groupes</div></div>
   <div class="cta-section"><div class="cta-btn">Inscrivez-vous dès maintenant !</div><div style="margin-top:10px;">📞 677 065 865 / 693 330 888</div></div>
-  <div class="footer"><div>📍 Pk10 en face boulangerie Saker</div><div>✉️ contact@createchformation.com</div></div>
+  <div class="footer"><div>📍 Pk10 en face boulangerie Saker</div><div>&nbsp;</div></div>
 </div>
-<!-- MODAL DETAILS FORMATION -->
 <div id="modalOverlay" class="modal-overlay"><div class="modal-content"><div class="modal-header"><h3 id="modalTitle"></h3><button class="close-modal">&times;</button></div><div class="modal-body"><img id="modalImg" class="modal-img"><div id="modalDesc"></div><ul id="modalList"></ul><button id="modalCtaBtn" class="modal-cta">📞 Je m'inscris</button></div></div></div>
 
-<!-- FORMULAIRE POUR CTA PRINCIPAL -->
 <div id="formOverlay" class="form-overlay"><div class="form-container"><h3>✏️ Choisissez votre formation</h3><div class="form-options"><label><input type="radio" name="formationChoice" value="Informatique & IA"> 💻 Informatique & IA</label><label><input type="radio" name="formationChoice" value="Robotique"> 🤖 Robotique</label><label><input type="radio" name="formationChoice" value="Mécanique"> 🔧 Mécanique</label><label><input type="radio" name="formationChoice" value="Perlage & Résine Époxy"> 💎 Perlage & Résine Époxy</label></div><button id="submitFormBtn" class="form-btn">✅ Valider et envoyer WhatsApp</button><button id="closeFormBtn" class="form-close">✖️ Fermer</button></div></div>
 
 <script>
@@ -381,9 +378,8 @@
   const modalCta = document.getElementById('modalCtaBtn');
   let currentFormationKey = null;
 
-  // NUMERO CORRIGE : 677065865
   function sendWhatsApp(formationName) {
-    const phone = "677065865";
+    const phone = "237677065865";
     const text = `Je souhaite m'inscrire à CréaTech pour la formation de : ${formationName}`;
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');
@@ -411,7 +407,6 @@
   closeModalBtn.addEventListener('click', closeModal);
   modalOverlay.addEventListener('click', (e) => { if(e.target === modalOverlay) closeModal(); });
 
-  // Bouton "Je m'inscris" dans le modal → envoie le message WhatsApp personnalisé
   modalCta.addEventListener('click', () => {
     if(currentFormationKey) {
       const formationName = formationsData[currentFormationKey].title;
@@ -420,7 +415,6 @@
     }
   });
 
-  // FORMULAIRE POUR LE CTA PRINCIPAL
   const formOverlay = document.getElementById('formOverlay');
   const submitFormBtn = document.getElementById('submitFormBtn');
   const closeFormBtn = document.getElementById('closeFormBtn');
@@ -448,7 +442,6 @@
   closeFormBtn.addEventListener('click', closeForm);
   formOverlay.addEventListener('click', (e) => { if(e.target === formOverlay) closeForm(); });
 
-  // CTA principal ouvre le formulaire
   document.querySelector('.cta-btn').addEventListener('click', openForm);
   document.querySelector('.header-photo').addEventListener('click', () => alert("🌟 Bienvenue dans l'atelier CréaTech !"));
 </script>
