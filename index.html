@@ -2,8 +2,8 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CréaTech Formation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>CréaTech Formation · Affiche Interactive</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -128,7 +128,7 @@
   .card-green .card-cta { color: #2d7d32; }
   .card-orange .card-cta { color: #e07b1a; }
   .card-purple .card-cta { color: #6a3d9a; }
-    .polo-section {
+   .polo-section {
     background: #f8f4ff;
     padding: 16px 30px;
     display: flex;
@@ -240,6 +240,57 @@
     cursor: pointer;
     margin-top: 20px;
   }
+  /* Formulaire inscription */
+  .form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 42, 94, 0.9);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  .form-overlay.active { opacity: 1; visibility: visible; }
+  .form-container {
+    background: white;
+    max-width: 400px;
+    width: 90%;
+    border-radius: 32px;
+    padding: 28px 24px;
+    text-align: center;
+    transform: scale(0.9);
+    animation: modalPop 0.3s forwards;
+  }
+  .form-container h3 { font-family: 'Montserrat'; font-size: 22px; color: #0a2a5e; margin-bottom: 20px; }
+  .form-options { text-align: left; margin: 20px 0; }
+  .form-options label { display: block; margin: 12px 0; font-weight: 600; cursor: pointer; }
+  .form-options input { margin-right: 12px; transform: scale(1.2); accent-color: #f5a623; }
+  .form-btn {
+    background: linear-gradient(135deg, #f5a623, #e8920d);
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  .form-close {
+    margin-top: 12px;
+    background: transparent;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    font-size: 14px;
+  }
   @media (max-width: 860px) {
     .formations { grid-template-columns: repeat(2, 1fr); }
   }
@@ -264,7 +315,7 @@
       <div class="slogan">Apprenez aujourd'hui • Brillez demain</div>
     </div>
     <div class="header-photo">
-      <img src="https://picsum.photos/id/26/400/250" alt="Atelier">
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=160&fit=crop" alt="Atelier formation">
     </div>
   </div>
     <div class="hero">
@@ -274,27 +325,27 @@
   </div>
   <div class="periode-bar">
     <span class="periode-label">📅 Période</span>
-    <span class="periode-value">15 MAI 2026 — 15 JUILLET 2026</span>
+    <span class="periode-value">13 JUIN — 29 AOÛT 2026</span>
   </div>
   <div class="formations">
     <div class="formation-card card-blue" data-modal="info">
       <div class="card-header"><span class="card-header-title">Informatique & IA</span></div>
-      <div class="card-img-placeholder"><img src="https://picsum.photos/id/0/200/120" alt="info"></div>
+      <div class="card-img-placeholder"><img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=200&h=115&fit=crop" alt="Informatique IA"></div>
       <div class="card-body"><p>Maîtrisez Word, Excel, PowerPoint, IA générative. Devenez expert numérique.</p><div class="card-cta">✨ Cliquez pour explorer</div></div>
     </div>
     <div class="formation-card card-green" data-modal="robot">
       <div class="card-header"><span class="card-header-title">Robotique</span></div>
-      <div class="card-img-placeholder"><img src="https://picsum.photos/id/1/200/120" alt="robot"></div>
+      <div class="card-img-placeholder"><img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=200&h=115&fit=crop" alt="Robotique"></div>
       <div class="card-body"><p>Assemblez, programmez des voitures robotisées. Électronique, capteurs.</p><div class="card-cta">🤖 Cliquez détails</div></div>
     </div>
     <div class="formation-card card-orange" data-modal="meca">
       <div class="card-header"><span class="card-header-title">Mécanique</span></div>
-      <div class="card-img-placeholder"><img src="https://picsum.photos/id/20/200/120" alt="meca"></div>
+      <div class="card-img-placeholder"><img src="https://images.unsplash.com/photo-1530046339160-ce3e8c1d4313?w=200&h=115&fit=crop" alt="Mécanique auto"></div>
       <div class="card-body"><p>Diagnostic, réparation automobile, entretien pro.</p><div class="card-cta">🔧 Cliquez</div></div>
     </div>
     <div class="formation-card card-purple" data-modal="resine">
       <div class="card-header"><span class="card-header-title">Perlage & Résine</span></div>
-      <div class="card-img-placeholder"><img src="https://picsum.photos/id/29/200/120" alt="resine"></div>
+      <div class="card-img-placeholder"><img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=200&h=115&fit=crop" alt="Résine époxy"></div>
       <div class="card-body"><p>Bijoux en perles, résine époxy, créations uniques.</p><div class="card-cta">💎 Cliquez</div></div>
     </div>
   </div>
@@ -307,14 +358,20 @@
   <div class="cta-section"><div class="cta-btn">Inscrivez-vous dès maintenant !</div><div style="margin-top:10px;">📞 677 065 865 / 693 330 888</div></div>
   <div class="footer"><div>📍 Pk10 en face boulangerie Saker</div><div>✉️ contact@createchformation.com</div></div>
 </div>
+<!-- MODAL DETAILS FORMATION -->
 <div id="modalOverlay" class="modal-overlay"><div class="modal-content"><div class="modal-header"><h3 id="modalTitle"></h3><button class="close-modal">&times;</button></div><div class="modal-body"><img id="modalImg" class="modal-img"><div id="modalDesc"></div><ul id="modalList"></ul><button id="modalCtaBtn" class="modal-cta">📞 Je m'inscris</button></div></div></div>
+
+<!-- FORMULAIRE POUR CTA PRINCIPAL -->
+<div id="formOverlay" class="form-overlay"><div class="form-container"><h3>✏️ Choisissez votre formation</h3><div class="form-options"><label><input type="radio" name="formationChoice" value="Informatique & IA"> 💻 Informatique & IA</label><label><input type="radio" name="formationChoice" value="Robotique"> 🤖 Robotique</label><label><input type="radio" name="formationChoice" value="Mécanique"> 🔧 Mécanique</label><label><input type="radio" name="formationChoice" value="Perlage & Résine Époxy"> 💎 Perlage & Résine Époxy</label></div><button id="submitFormBtn" class="form-btn">✅ Valider et envoyer WhatsApp</button><button id="closeFormBtn" class="form-close">✖️ Fermer</button></div></div>
+
 <script>
   const formationsData = {
-    info: { title: "💻 Informatique & IA", img: "https://picsum.photos/id/106/500/280", desc: "Devenez autonome avec les outils bureautiques et l'IA générative.", details: ["✅ Word : CV, rapports", "✅ Excel : tableaux, formules", "✅ PowerPoint pro", "✅ Initiation ChatGPT"] },
-    robot: { title: "🤖 Robotique", img: "https://picsum.photos/id/2/500/280", desc: "Montez des circuits, programmez Arduino, créez des robots mobiles.", details: ["🔧 Assemblage voitures robotisées", "💡 Programmation capteurs", "📡 Suiveur de ligne", "🏆 Projet final"] },
-    meca: { title: "🔧 Mécanique", img: "https://picsum.photos/id/21/500/280", desc: "Diagnostic, entretien, réparation automobile.", details: ["🛠️ Outils et sécurité", "🚗 Moteurs essence/diesel", "🔩 Freins, vidange", "✅ Atelier pratique"] },
-    resine: { title: "✨ Résine & Perlage", img: "https://picsum.photos/id/30/500/280", desc: "Créez bijoux, sous-verres, objets décoratifs en résine.", details: ["💎 Mélange et couleurs", "🌸 Inclusions florales", "📿 Perlage avancé", "🎁 Vente de créations"] }
+    info: { title: "💻 Informatique & IA", img: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=500&h=280&fit=crop", desc: "Devenez autonome avec les outils bureautiques et l'IA générative.", details: ["✅ Word : CV, rapports", "✅ Excel : tableaux, formules", "✅ PowerPoint pro", "✅ Initiation ChatGPT", "✅ Automatisation avec IA"] },
+    robot: { title: "🤖 Robotique", img: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=500&h=280&fit=crop", desc: "Montez des circuits, programmez Arduino, créez des robots mobiles.", details: ["🔧 Assemblage voitures robotisées", "💡 Programmation capteurs", "📡 Suiveur de ligne", "🏆 Projet final robot", "🎯 Certification"] },
+    meca: { title: "🔧 Mécanique", img: "https://images.unsplash.com/photo-1530046339160-ce3e8c1d4313?w=500&h=280&fit=crop", desc: "Diagnostic, entretien, réparation automobile.", details: ["🛠️ Outils et sécurité", "🚗 Moteurs essence/diesel", "🔩 Freins, vidange", "✅ Atelier pratique", "📋 Diagnostic électronique"] },
+    resine: { title: "✨ Résine & Perlage", img: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&h=280&fit=crop", desc: "Créez bijoux, sous-verres, objets décoratifs en résine.", details: ["💎 Mélange et couleurs", "🌸 Inclusions florales", "📿 Perlage avancé", "🎁 Vente de créations", "🖌️ Techniques pro"] }
   };
+
   const modalOverlay = document.getElementById('modalOverlay');
   const modalTitle = document.getElementById('modalTitle');
   const modalImg = document.getElementById('modalImg');
@@ -322,9 +379,19 @@
   const modalList = document.getElementById('modalList');
   const closeModalBtn = document.querySelector('.close-modal');
   const modalCta = document.getElementById('modalCtaBtn');
+  let currentFormationKey = null;
+
+  function sendWhatsApp(formationName) {
+    const phone = "677065865";
+    const text = `Je souhaite m'inscrire à CréaTech pour la formation de : ${formationName}`;
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+    window.open(url, '_blank');
+  }
+
   function openModal(key) {
     const d = formationsData[key];
     if(!d) return;
+    currentFormationKey = key;
     modalTitle.innerText = d.title;
     modalImg.src = d.img;
     modalDesc.innerText = d.desc;
@@ -332,15 +399,56 @@
     modalOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
+
+  function closeModal() { modalOverlay.classList.remove('active'); document.body.style.overflow = ''; }
+
   document.querySelectorAll('.formation-card').forEach(card => {
     const modalRef = card.getAttribute('data-modal');
     if(modalRef) card.addEventListener('click', () => openModal(modalRef));
   });
-  function closeModal() { modalOverlay.classList.remove('active'); document.body.style.overflow = ''; }
+
   closeModalBtn.addEventListener('click', closeModal);
   modalOverlay.addEventListener('click', (e) => { if(e.target === modalOverlay) closeModal(); });
-  modalCta.addEventListener('click', () => { alert("📞 Contactez-nous au 677 065 865 / 693 330 888 pour valider votre inscription !"); closeModal(); });
-  document.querySelector('.cta-btn').addEventListener('click', () => alert("🎯 Réservez votre place ! Appelez-nous au 677 065 865."));
+
+  // Bouton "Je m'inscris" dans le modal → envoie le message WhatsApp personnalisé
+  modalCta.addEventListener('click', () => {
+    if(currentFormationKey) {
+      const formationName = formationsData[currentFormationKey].title;
+      sendWhatsApp(formationName);
+      closeModal();
+    }
+  });
+
+  // FORMULAIRE POUR LE CTA PRINCIPAL
+  const formOverlay = document.getElementById('formOverlay');
+  const submitFormBtn = document.getElementById('submitFormBtn');
+  const closeFormBtn = document.getElementById('closeFormBtn');
+
+  function openForm() {
+    formOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeForm() {
+    formOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  submitFormBtn.addEventListener('click', () => {
+    const selected = document.querySelector('input[name="formationChoice"]:checked');
+    if(!selected) {
+      alert("Veuillez sélectionner une formation avant de valider.");
+      return;
+    }
+    const formationValue = selected.value;
+    sendWhatsApp(formationValue);
+    closeForm();
+  });
+
+  closeFormBtn.addEventListener('click', closeForm);
+  formOverlay.addEventListener('click', (e) => { if(e.target === formOverlay) closeForm(); });
+
+  // CTA principal ouvre le formulaire
+  document.querySelector('.cta-btn').addEventListener('click', openForm);
   document.querySelector('.header-photo').addEventListener('click', () => alert("🌟 Bienvenue dans l'atelier CréaTech !"));
 </script>
 </body>
