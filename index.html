@@ -200,10 +200,11 @@
   .modal-overlay.active { opacity: 1; visibility: visible; }
   .modal-content {
     background: white;
-    max-width: 500px;
+    max-width: 550px;
     width: 90%;
     border-radius: 32px;
-    overflow: hidden;
+    overflow-y: auto;
+    max-height: 85vh;
     transform: scale(0.9);
     animation: modalPop 0.3s forwards;
   }
@@ -227,9 +228,10 @@
   }
   .modal-body { padding: 24px; }
   .modal-img { width: 100%; height: 180px; object-fit: cover; border-radius: 20px; margin-bottom: 20px; }
-  .modal-desc { font-size: 15px; margin-bottom: 16px; }
+  .modal-desc { font-size: 15px; margin-bottom: 16px; font-weight: bold; color: #0a2a5e; }
   .modal-details-list { list-style: none; }
-  .modal-details-list li { margin: 10px 0; display: flex; align-items: center; gap: 12px; }
+  .modal-details-list li { margin: 8px 0; display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.4; }
+  .modal-details-list li strong { color: #6a3d9a; }
   .modal-cta {
     background: #f5a623;
     width: 100%;
@@ -339,34 +341,53 @@
     </div>
     <div class="formation-card card-orange" data-modal="meca">
       <div class="card-header"><span class="card-header-title">Mécanique</span></div>
-      <div class="card-img-placeholder"><img src="https://images.unsplash.com/photo-1530046339160-ce3e8c1d4313?w=200&h=115&fit=crop" alt="Mécanique auto"></div>
+      <div class="card-img-placeholder"><img src="https://images.pexels.com/photos/3854424/pexels-photo-3854424.jpeg?w=200&h=115&fit=crop" alt="Mécanique auto"></div>
       <div class="card-body"><p>Diagnostic, réparation automobile, entretien pro.</p><div class="card-cta">🔧 Cliquez</div></div>
     </div>
     <div class="formation-card card-purple" data-modal="resine">
-      <div class="card-header"><span class="card-header-title">Perlage & Résine</span></div>
+      <div class="card-header"><span class="card-header-title">Perlage, Résine époxy</span></div>
       <div class="card-img-placeholder"><img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=200&h=115&fit=crop" alt="Résine époxy"></div>
-      <div class="card-body"><p>Bijoux en perles, résine époxy, créations uniques.</p><div class="card-cta">💎 Cliquez</div></div>
+      <div class="card-body"><p>Résine époxy, perlage, bijoux, objets décoratifs.</p><div class="card-cta">💎 Cliquez</div></div>
     </div>
   </div>
   <div class="polo-section">
     <div><svg width="80" height="80" viewBox="0 0 80 80"><path d="M18 28 L10 50 L18 52 L18 75 L62 75 L62 52 L70 50 L62 28 L52 22 L40 26 L28 22 Z" fill="#111"/></svg></div>
     <div class="polo-text"><h3>🎁 Polo gratuit pour les <span>10 premiers</span> inscrits !</h3><p>Les 10 premiers apprenants recevront un polo CréaTech Formation offert.</p></div>
   </div>
-  <div class="bonus-section"><div class="bonus-tag">🎉 Bonus inclus</div><div class="bonus-items"><div class="bonus-item">📘 Anglais offert</div><div class="bonus-item">🥛 Produits laitiers offerts</div><div class="bonus-item">🍎 Collations offertes</div></div></div>
+  <div class="bonus-section"><div class="bonus-tag">🎉 Bonus inclus</div><div class="bonus-items"><div class="bonus-item">📘 Formation en anglais</div><div class="bonus-item">🥛 Formation fabrication produits laitiers</div><div class="bonus-item">🍎 Collations offertes</div><div class="bonus-item">🎹 Cours piano & guitare</div></div></div>
   <div class="features-bar"><div class="feature-item">✅ 100% Pratique</div><div class="feature-item">📜 Attestation</div><div class="feature-item">👥 Petits groupes</div></div>
   <div class="cta-section"><div class="cta-btn">Inscrivez-vous dès maintenant !</div><div style="margin-top:10px;">📞 677 065 865 / 693 330 888</div></div>
   <div class="footer"><div>📍 Pk10 en face boulangerie Saker</div><div>&nbsp;</div></div>
 </div>
 <div id="modalOverlay" class="modal-overlay"><div class="modal-content"><div class="modal-header"><h3 id="modalTitle"></h3><button class="close-modal">&times;</button></div><div class="modal-body"><img id="modalImg" class="modal-img"><div id="modalDesc"></div><ul id="modalList"></ul><button id="modalCtaBtn" class="modal-cta">📞 Je m'inscris</button></div></div></div>
 
-<div id="formOverlay" class="form-overlay"><div class="form-container"><h3>✏️ Choisissez votre formation</h3><div class="form-options"><label><input type="radio" name="formationChoice" value="Informatique & IA"> 💻 Informatique & IA</label><label><input type="radio" name="formationChoice" value="Robotique"> 🤖 Robotique</label><label><input type="radio" name="formationChoice" value="Mécanique"> 🔧 Mécanique</label><label><input type="radio" name="formationChoice" value="Perlage & Résine Époxy"> 💎 Perlage & Résine Époxy</label></div><button id="submitFormBtn" class="form-btn">✅ Valider et envoyer WhatsApp</button><button id="closeFormBtn" class="form-close">✖️ Fermer</button></div></div>
+<div id="formOverlay" class="form-overlay"><div class="form-container"><h3>✏️ Choisissez votre formation</h3><div class="form-options"><label><input type="radio" name="formationChoice" value="Informatique & IA"> 💻 Informatique & IA</label><label><input type="radio" name="formationChoice" value="Robotique"> 🤖 Robotique</label><label><input type="radio" name="formationChoice" value="Mécanique"> 🔧 Mécanique</label><label><input type="radio" name="formationChoice" value="Perlage, Résine époxy"> 💎 Perlage, Résine époxy</label></div><button id="submitFormBtn" class="form-btn">✅ Valider et envoyer WhatsApp</button><button id="closeFormBtn" class="form-close">✖️ Fermer</button></div></div>
 
 <script>
   const formationsData = {
     info: { title: "💻 Informatique & IA", img: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=500&h=280&fit=crop", desc: "Devenez autonome avec les outils bureautiques et l'IA générative.", details: ["✅ Word : CV, rapports", "✅ Excel : tableaux, formules", "✅ PowerPoint pro", "✅ Initiation ChatGPT", "✅ Automatisation avec IA"] },
     robot: { title: "🤖 Robotique", img: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=500&h=280&fit=crop", desc: "Montez des circuits, programmez Arduino, créez des robots mobiles.", details: ["🔧 Assemblage voitures robotisées", "💡 Programmation capteurs", "📡 Suiveur de ligne", "🏆 Projet final robot", "🎯 Certification"] },
-    meca: { title: "🔧 Mécanique", img: "https://images.unsplash.com/photo-1530046339160-ce3e8c1d4313?w=500&h=280&fit=crop", desc: "Diagnostic, entretien, réparation automobile.", details: ["🛠️ Outils et sécurité", "🚗 Moteurs essence/diesel", "🔩 Freins, vidange", "✅ Atelier pratique", "📋 Diagnostic électronique"] },
-    resine: { title: "✨ Résine & Perlage", img: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&h=280&fit=crop", desc: "Créez bijoux, sous-verres, objets décoratifs en résine.", details: ["💎 Mélange et couleurs", "🌸 Inclusions florales", "📿 Perlage avancé", "🎁 Vente de créations", "🖌️ Techniques pro"] }
+    meca: { title: "🔧 Mécanique", img: "https://images.pexels.com/photos/3854424/pexels-photo-3854424.jpeg?w=500&h=280&fit=crop", desc: "Diagnostic, entretien, réparation automobile.", details: ["🛠️ Outils et sécurité", "🚗 Moteurs essence/diesel", "🔩 Freins, vidange", "✅ Atelier pratique", "📋 Diagnostic électronique"] },
+    resine: { 
+      title: "💎 Perlage, Résine époxy", 
+      img: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&h=280&fit=crop", 
+      desc: "Devenez expert en résine époxy et en perlage créatif !", 
+      details: [
+        "<strong>✨ RÉSINE ÉPOXY :</strong>",
+        "• Module 1 — Introduction à l'art de la résine",
+        "• Module 2 — Le matériel indispensable",
+        "• Module 3 — Calcul et mesure du rapport résine/catalyseur",
+        "• Module 4 — Techniques de mélange parfait",
+        "• Module 5 — Choisir et utiliser les moules",
+        "• Module 6 — Coloration et décoration de la résine",
+        "• Module 7 — Création d'objets variés (porte-clés, bijoux, couvertures de livres, tables, plateaux…)",
+        "• Module 8 — Gagner de l'argent avec vos créations",
+        "• Module 9 — Erreurs courantes à éviter",
+        "<strong>📿 PERLAGE :</strong>",
+        "• Introduction au perlage et aux matériaux",
+        "• Techniques de perlage et tissages"
+      ]
+    }
   };
 
   const modalOverlay = document.getElementById('modalOverlay');
@@ -392,7 +413,7 @@
     modalTitle.innerText = d.title;
     modalImg.src = d.img;
     modalDesc.innerText = d.desc;
-    modalList.innerHTML = d.details.map(item => `<li>✔️ ${item}</li>`).join('');
+    modalList.innerHTML = d.details.map(item => `<li>📌 ${item}</li>`).join('');
     modalOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
@@ -409,7 +430,8 @@
 
   modalCta.addEventListener('click', () => {
     if(currentFormationKey) {
-      const formationName = formationsData[currentFormationKey].title;
+      let formationName = formationsData[currentFormationKey].title;
+      if(currentFormationKey === 'resine') formationName = "Perlage, Résine époxy";
       sendWhatsApp(formationName);
       closeModal();
     }
