@@ -98,6 +98,40 @@
   }
   .periode-label { font-family: 'Montserrat'; font-weight: 700; color: #f5a623; }
   .periode-value { font-family: 'Montserrat'; font-weight: 800; color: white; }
+  .horaires-bar {
+    background: #0f3a6e;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-top: 1px solid rgba(245,166,35,0.3);
+    border-bottom: 1px solid rgba(245,166,35,0.3);
+  }
+  .groupe-horaire {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .groupe-titre {
+    font-family: 'Montserrat';
+    font-weight: 800;
+    color: #f5a623;
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+  .groupe-jours {
+    font-family: 'Open Sans';
+    font-weight: 600;
+    color: white;
+    font-size: 13px;
+  }
+  .groupe-heure {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    color: #ffd166;
+    font-size: 12px;
+  }
   .formations {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -329,6 +363,18 @@
   <div class="periode-bar">
     <span class="periode-label">📅 Période</span>
     <span class="periode-value">13 JUIN — 29 AOÛT 2026</span>
+  </div>
+  <div class="horaires-bar">
+    <div class="groupe-horaire">
+      <span class="groupe-titre">📘 GROUPE A</span>
+      <span class="groupe-jours">Lundi · Mercredi · Vendredi</span>
+      <span class="groupe-heure">⏰ 9h30 – 12h00</span>
+    </div>
+    <div class="groupe-horaire">
+      <span class="groupe-titre">📙 GROUPE B</span>
+      <span class="groupe-jours">Mardi · Jeudi · Samedi</span>
+      <span class="groupe-heure">⏰ 9h30 – 12h00</span>
+    </div>
   </div>
   <div class="formations">
     <div class="formation-card card-blue" data-modal="info">
