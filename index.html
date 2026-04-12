@@ -124,11 +124,13 @@
   .card-green .card-header { background: #2d7d32; }
   .card-orange .card-header { background: #e07b1a; }
   .card-purple .card-header { background: #6a3d9a; }
+  .card-pink .card-header { background: #d44c7a; }
   .card-blue .card-cta { color: #1a4a8e; }
   .card-green .card-cta { color: #2d7d32; }
   .card-orange .card-cta { color: #e07b1a; }
   .card-purple .card-cta { color: #6a3d9a; }
-   .polo-section {
+  .card-pink .card-cta { color: #d44c7a; }
+  .polo-section {
     background: #f8f4ff;
     padding: 16px 30px;
     display: flex;
@@ -319,7 +321,7 @@
       <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=160&fit=crop" alt="Atelier formation">
     </div>
   </div>
-    <div class="hero">
+  <div class="hero">
     <div><div class="hero-title">Des compétences d'avenir,<br><span>une vie meilleure !</span></div>
     <p class="hero-desc">CréaTech Formation vous offre des formations pratiques et innovantes pour vous rendre autonome.</p></div>
     <div class="hero-badge"><p>FORMATIONS<br>PRATIQUES<br>CERTIFIANTES</p></div>
@@ -345,9 +347,14 @@
       <div class="card-body"><p>Diagnostic, réparation automobile, entretien pro.</p><div class="card-cta">🔧 Cliquez</div></div>
     </div>
     <div class="formation-card card-purple" data-modal="resine">
-      <div class="card-header"><span class="card-header-title">Perlage, Résine époxy</span></div>
+      <div class="card-header"><span class="card-header-title">Résine époxy</span></div>
       <div class="card-img-placeholder"><img src="https://resinpro.fr/wp-content/uploads/2023/12/ALPHABET-1.jpg" alt="Résine époxy"></div>
-      <div class="card-body"><p>Résine époxy, perlage, bijoux, objets décoratifs.</p><div class="card-cta">💎 Cliquez</div></div>
+      <div class="card-body"><p>Résine époxy : créez bijoux, plateaux, objets décoratifs.</p><div class="card-cta">💎 Cliquez</div></div>
+    </div>
+    <div class="formation-card card-pink" data-modal="patisserie">
+      <div class="card-header"><span class="card-header-title">Pâtisserie</span></div>
+      <div class="card-img-placeholder"><img src="https://www.bracconi.com/wp-content/uploads/2024/03/aae1dfa1f5da82fd2220748b901eb06f.jpg" alt="Pâtisserie"></div>
+      <div class="card-body"><p>Apprenez l'art de la pâtisserie : gâteaux, viennoiseries, décoration.</p><div class="card-cta">🍰 Cliquez</div></div>
     </div>
   </div>
   <div class="polo-section">
@@ -358,10 +365,10 @@
   <div class="features-bar"><div class="feature-item">✅ 100% Pratique</div><div class="feature-item">📜 Attestation</div><div class="feature-item">👥 Petits groupes</div></div>
   <div class="cta-section"><div class="cta-btn">Inscrivez-vous dès maintenant !</div><div style="margin-top:10px;">📞 677 065 865 / 693 330 888</div></div>
   <div class="footer"><div>📍 Pk10 en face boulangerie Saker</div><div>&nbsp;</div></div>
- </div>
- <div id="modalOverlay" class="modal-overlay"><div class="modal-content"><div class="modal-header"><h3 id="modalTitle"></h3><button class="close-modal">&times;</button></div><div class="modal-body"><img id="modalImg" class="modal-img"><div id="modalDesc"></div><ul id="modalList"></ul><button id="modalCtaBtn" class="modal-cta">📞 Je m'inscris</button></div></div></div>
+</div>
+<div id="modalOverlay" class="modal-overlay"><div class="modal-content"><div class="modal-header"><h3 id="modalTitle"></h3><button class="close-modal">&times;</button></div><div class="modal-body"><img id="modalImg" class="modal-img"><div id="modalDesc"></div><ul id="modalList"></ul><button id="modalCtaBtn" class="modal-cta">📞 Je m'inscris</button></div></div></div>
 
-<div id="formOverlay" class="form-overlay"><div class="form-container"><h3>✏️ Choisissez votre formation</h3><div class="form-options"><label><input type="radio" name="formationChoice" value="Informatique & IA"> 💻 Informatique & IA</label><label><input type="radio" name="formationChoice" value="Robotique"> 🤖 Robotique</label><label><input type="radio" name="formationChoice" value="Mécanique"> 🔧 Mécanique</label><label><input type="radio" name="formationChoice" value="Perlage, Résine époxy"> 💎 Perlage, Résine époxy</label></div><button id="submitFormBtn" class="form-btn">✅ Valider et envoyer WhatsApp</button><button id="closeFormBtn" class="form-close">✖️ Fermer</button></div></div>
+<div id="formOverlay" class="form-overlay"><div class="form-container"><h3>✏️ Choisissez votre formation</h3><div class="form-options"><label><input type="radio" name="formationChoice" value="Informatique & IA"> 💻 Informatique & IA</label><label><input type="radio" name="formationChoice" value="Robotique"> 🤖 Robotique</label><label><input type="radio" name="formationChoice" value="Mécanique"> 🔧 Mécanique</label><label><input type="radio" name="formationChoice" value="Résine époxy"> 💎 Résine époxy</label><label><input type="radio" name="formationChoice" value="Pâtisserie"> 🍰 Pâtisserie</label></div><button id="submitFormBtn" class="form-btn">✅ Valider et envoyer WhatsApp</button><button id="closeFormBtn" class="form-close">✖️ Fermer</button></div></div>
 
 <script>
   const formationsData = {
@@ -369,9 +376,9 @@
     robot: { title: "🤖 Robotique", img: "https://www.robot-magazine.fr/wp-content/uploads/2022/06/voiture-robot.png", desc: "Montez des circuits, programmez Arduino, créez des robots mobiles.", details: ["🔧 Assemblage voitures robotisées", "💡 Programmation capteurs", "📡 Suiveur de ligne", "🏆 Projet final robot", "🎯 Certification"] },
     meca: { title: "🔧 Mécanique", img: "https://www.ecoleauto.com/wp-content/uploads/2017/08/image001-2.jpg", desc: "Diagnostic, entretien, réparation automobile.", details: ["🛠️ Outils et sécurité", "🚗 Moteurs essence/diesel", "🔩 Freins, vidange", "✅ Atelier pratique", "📋 Diagnostic électronique"] },
     resine: { 
-      title: "💎 Perlage, Résine époxy", 
+      title: "💎 Résine époxy", 
       img: "https://resinpro.fr/wp-content/uploads/2023/12/ALPHABET-1.jpg", 
-      desc: "Devenez expert en résine époxy et en perlage créatif !", 
+      desc: "Devenez expert en résine époxy !", 
       details: [
         "<strong>✨ RÉSINE ÉPOXY :</strong>",
         "• Module 1 — Introduction à l'art de la résine",
@@ -382,10 +389,23 @@
         "• Module 6 — Coloration et décoration de la résine",
         "• Module 7 — Création d'objets variés (porte-clés, bijoux, couvertures de livres, tables, plateaux…)",
         "• Module 8 — Gagner de l'argent avec vos créations",
-        "• Module 9 — Erreurs courantes à éviter",
-        "<strong>📿 PERLAGE :</strong>",
-        "• Introduction au perlage et aux matériaux",
-        "• Techniques de perlage et tissages"
+        "• Module 9 — Erreurs courantes à éviter"
+      ]
+    },
+    patisserie: {
+      title: "🍰 Pâtisserie",
+      img: "https://www.bracconi.com/wp-content/uploads/2024/03/aae1dfa1f5da82fd2220748b901eb06f.jpg",
+      desc: "Apprenez les secrets de la pâtisserie professionnelle.",
+      details: [
+        "<strong>🍰 PÂTISSERIE :</strong>",
+        "• Module 1 — Les bases de la pâtisserie",
+        "• Module 2 — Les gâteaux classiques (génoise, mousse, crème)",
+        "• Module 3 — Viennoiseries : croissants, pains au chocolat",
+        "• Module 4 — Techniques de décoration (poche à douille, glaçage)",
+        "• Module 5 — Entremets et desserts de fête",
+        "• Module 6 — Pâtisserie sans gluten et végétalienne",
+        "• Module 7 — Montage et dressage professionnel",
+        "• Module 8 — Gérer une pâtisserie : aspects commerciaux"
       ]
     }
   };
@@ -431,7 +451,6 @@
   modalCta.addEventListener('click', () => {
     if(currentFormationKey) {
       let formationName = formationsData[currentFormationKey].title;
-      if(currentFormationKey === 'resine') formationName = "Perlage, Résine époxy";
       sendWhatsApp(formationName);
       closeModal();
     }
