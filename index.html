@@ -122,7 +122,7 @@
   .section-label { font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--teal); margin-bottom: 12px; }
   .section-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 48px; line-height: 1.15; }
   .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
-  .card { background: linear-gradient(145deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01)); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 32px 28px; position: relative; overflow: hidden; transition: border-color 0.3s, transform 0.3s; cursor: default; }
+  .card { background: linear-gradient(145deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01)); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 32px 28px; position: relative; overflow: hidden; transition: border-color 0.3s, transform 0.3s; cursor: pointer; }
   .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--teal), transparent); opacity: 0; transition: opacity 0.3s; }
   .card:hover { border-color: rgba(0,212,200,0.25); transform: translateY(-4px); }
   .card:hover::before { opacity: 1; }
@@ -200,8 +200,8 @@
     Informatique & IA, Robotique, Mécanique, Résine époxy, Pâtisserie
   </p>
   <div class="btn-group">
-    <button class="btn-primary">S'inscrire maintenant</button>
-    <button class="btn-outline">Voir le programme</button>
+    <button class="btn-primary" id="main-inscription-btn">S'inscrire maintenant</button>
+    <button class="btn-outline" id="voir-programme-btn">Voir le programme</button>
   </div>
 </section>
 
@@ -209,31 +209,31 @@
   <p class="section-label">Nos disciplines</p>
   <h2 class="section-title">Ce que vous allez<br>apprendre chez nous</h2>
   <div class="cards">
-    <div class="card">
+    <div class="card" data-formation="informatique">
       <div class="card-icon">💻</div>
       <div class="card-title">Informatique & IA</div>
       <div class="card-desc">Maîtrisez les outils numériques et l'intelligence artificielle pour le monde de demain.</div>
       <div class="price-tag">30 000 FCFA</div>
     </div>
-    <div class="card">
+    <div class="card" data-formation="robotique">
       <div class="card-icon">🤖</div>
       <div class="card-title">Robotique</div>
       <div class="card-desc">Concevez et programmez des robots à travers des projets pratiques et innovants.</div>
       <div class="price-tag">50 000 FCFA</div>
     </div>
-    <div class="card">
+    <div class="card" data-formation="mecanique">
       <div class="card-icon">⚙️</div>
       <div class="card-title">Mécanique</div>
       <div class="card-desc">Comprenez les mécanismes et développez des compétences techniques solides.</div>
       <div class="price-tag">50 000 FCFA</div>
     </div>
-    <div class="card">
+    <div class="card" data-formation="resine">
       <div class="card-icon">✨</div>
       <div class="card-title">Résine époxy</div>
       <div class="card-desc">Créez des objets décoratifs uniques en maîtrisant l'art de la résine.</div>
       <div class="price-tag">30 000 FCFA</div>
     </div>
-    <div class="card">
+    <div class="card" data-formation="patisserie">
       <div class="card-icon">🍰</div>
       <div class="card-title">Pâtisserie</div>
       <div class="card-desc">Apprenez l'art de la pâtisserie : gâteaux, viennoiseries, décoration.</div>
@@ -244,25 +244,77 @@
     📍 Matériel disponible au centre · Polo obligatoire (inclus) · Inscription 5 000 FCFA
   </div>
 </div>
+  <!-- MODAL INFORMATIQUE -->
+  <div id="modalInformatique" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header"><h3>💻 Informatique & IA</h3><button class="close-modal">&times;</button></div>
+      <div class="modal-body">
+        <img class="modal-img" src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=500&h=280&fit=crop" alt="Informatique">
+        <ul class="modal-details-list">
+          <li><strong>🔹 Bases informatiques essentielles</strong><br>Maîtriser l’ordinateur et les outils indispensables du quotidien :<br>- Microsoft Word (rédaction de documents)<br>- Microsoft Excel (tableaux, calculs simples)<br>- Microsoft PowerPoint (présentations modernes)<br>- Microsoft Access (initiation aux bases de données)<br>- Navigation Internet et recherche intelligente</li>
+          <li><strong>🔹 Création digitale</strong><br>Concevoir des visuels et projets créatifs avec des outils simples et professionnels :<br>- Création d’affiches<br>- Designs modernes (Canva)<br>- Initiation au branding visuel</li>
+          <li><strong>🔹 Programmation ludique</strong><br>Découvrir la logique du code en s’amusant :<br>- Création de petits jeux 🎮<br>- Animations interactives<br>- Développement de la pensée logique</li>
+          <li><strong>🔹 Introduction à l’Intelligence Artificielle (IA)</strong><br>Apprendre à utiliser les outils du futur comme ChatGPT pour :<br>- générer des idées 💡<br>- créer des histoires ✍️<br>- résoudre des problèmes 🧠<br>- améliorer leurs projets scolaires<br>- booster leur créativité 🚀</li>
+        </ul>
+        <button class="modal-cta" data-formation-name="Informatique & IA">📞 Je m'inscris</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL ROBOTIQUE -->
+  <div id="modalRobotique" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header"><h3>🤖 Robotique</h3><button class="close-modal">&times;</button></div>
+      <div class="modal-body">
+        <img class="modal-img" src="https://www.robot-magazine.fr/wp-content/uploads/2022/06/voiture-robot.png" alt="Robotique">
+        <ul class="modal-details-list">
+          <li><strong>🔹 Introduction à la robotique</strong><br>Découvrez les bases de la robotique et ses applications.</li>
+          <li><strong>🔹 Assemblage de véhicules robotisés</strong><br>Apprenez à monter et configurer des petites voitures robotisées.</li>
+          <li><strong>🔹 Programmation embarquée</strong><br>Initiation à la programmation de microcontrôleurs (Arduino) pour contrôler les mouvements et les capteurs.</li>
+          <li><strong>🔹 Capteurs et automatismes</strong><br>Utilisation de capteurs (ultrasons, infrarouges) pour interagir avec l'environnement.</li>
+          <li><strong>🔹 Projet pratique</strong><br>Mise en œuvre d'un projet complet de robotique.</li>
+        </ul>
+        <button class="modal-cta" data-formation-name="Robotique">📞 Je m'inscris</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL MECANIQUE -->
+  <div id="modalMecanique" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header"><h3>🔧 Mécanique</h3><button class="close-modal">&times;</button></div>
+      <div class="modal-body">
+        <img class="modal-img" src="https://www.ecoleauto.com/wp-content/uploads/2017/08/image001-2.jpg" alt="Mécanique">
+        <ul class="modal-details-list">
+          <li><strong>🔹 Introduction à la mécanique automobile</strong><br>Comprendre les principes fondamentaux et la sécurité en atelier.</li>
+          <li><strong>🔹 Outillage et diagnostic</strong><br>Apprendre à utiliser les outils et à diagnostiquer les pannes courantes.</li>
+          <li><strong>🔹 Moteurs (essence/diesel)</strong><br>Étude du fonctionnement et des principaux composants.</li>
+          <li><strong>🔹 Systèmes de freinage et de suspension</strong><br>Maintenance et réparation de base.</li>
+          <li><strong>🔹 Atelier pratique</strong><br>Mise en application sur des véhicules réels.</li>
+        </ul>
+        <button class="modal-cta" data-formation-name="Mécanique">📞 Je m'inscris</button>
+      </div>
+    </div>
+  </div>
+
   <!-- MODAL RESINE -->
   <div id="modalResine" class="modal-overlay">
     <div class="modal-content">
       <div class="modal-header"><h3>✨ Résine époxy</h3><button class="close-modal">&times;</button></div>
       <div class="modal-body">
         <img class="modal-img" src="https://lh3.googleusercontent.com/u/0/d/1i0Z0f0K0Tp6jj_N_2uJvgNjeVLO3VVya" alt="Résine époxy">
-        <p class="modal-desc">Devenez expert en résine époxy !</p>
         <ul class="modal-details-list">
-          <li>📌 Module 1 — Introduction à l'art de la résine</li>
-          <li>📌 Module 2 — Le matériel indispensable</li>
-          <li>📌 Module 3 — Calcul et mesure du rapport résine/catalyseur</li>
-          <li>📌 Module 4 — Techniques de mélange parfait</li>
-          <li>📌 Module 5 — Choisir et utiliser les moules</li>
-          <li>📌 Module 6 — Coloration et décoration de la résine</li>
-          <li>📌 Module 7 — Création d'objets variés (porte-clés, bijoux, couvertures de livres, tables, plateaux…)</li>
-          <li>📌 Module 8 — Gagner de l'argent avec vos créations</li>
-          <li>📌 Module 9 — Erreurs courantes à éviter</li>
+          <li>📌 Module 1 : Introduction à l'art de la résine</li>
+          <li>📌 Module 2 : Le matériel indispensable</li>
+          <li>📌 Module 3 : Calcul et mesure du rapport résine/catalyseur</li>
+          <li>📌 Module 4 : Techniques de mélange parfait</li>
+          <li>📌 Module 5 : Choisir et utiliser les moules</li>
+          <li>📌 Module 6 : Coloration et décoration de la résine</li>
+          <li>📌 Module 7 : Création d'objets variés (porte-clés, bijoux, couvertures de livres, tables, plateaux…)</li>
+          <li>📌 Module 8 : Gagner de l'argent avec vos créations</li>
+          <li>📌 Module 9 : Erreurs courantes à éviter</li>
         </ul>
-        <button class="modal-cta">📞 Je m'inscris</button>
+        <button class="modal-cta" data-formation-name="Résine époxy">📞 Je m'inscris</button>
       </div>
     </div>
   </div>
@@ -273,57 +325,13 @@
       <div class="modal-header"><h3>🍰 Pâtisserie</h3><button class="close-modal">&times;</button></div>
       <div class="modal-body">
         <img class="modal-img" src="https://www.bracconi.com/wp-content/uploads/2024/03/aae1dfa1f5da82fd2220748b901eb06f.jpg" alt="Pâtisserie">
-        <p class="modal-desc">Apprenez les secrets de la pâtisserie professionnelle.</p>
         <ul class="modal-details-list">
-          <li><strong>📘 Module 1 : Pâtisserie de Base et Snacking</strong> — Madeleines, Génoises, Cakes variés, Cupcakes, Cakes aux fruits, Crêpes variées, Nems</li>
-          <li><strong>🥐 Module 2 : Boulangerie et Cake Design</strong> — Brioche, Pain au lait, Croissant au chocolat, Génoise (Perfectionnement), Gâteau d'anniversaire</li>
-          <li><strong>🍪 Module 3 : Biscuiterie Artisanale</strong> — Biscuits au beurre, Biscuits au diamant, Biscuits Forêt-Noire, Biscuits aux écailles</li>
-          <li><strong>🥤 Module 4 : Boissons et Produits Laitiers</strong> — Jus de bissap, Jus de baobab, Lait caillé, Bergères</li>
+          <li><strong>📘 Module 1 : Pâtisserie de Base et Snacking</strong><br>Madeleines, Génoises, Cakes variés, Cupcakes, Cakes aux fruits, Crêpes variées, Nems</li>
+          <li><strong>🥐 Module 2 : Boulangerie et Cake Design</strong><br>Brioche, Pain au lait, Croissant au chocolat, Génoise (Perfectionnement), Gâteau d'anniversaire</li>
+          <li><strong>🍪 Module 3 : Biscuiterie Artisanale</strong><br>Biscuits au beurre, Biscuits au diamant, Biscuits Forêt-Noire, Biscuits aux écailles</li>
+          <li><strong>🥤 Module 4 : Boissons et Produits Laitiers</strong><br>Jus de bissap, Jus de baobab, Lait caillé, Bergères</li>
         </ul>
-        <button class="modal-cta">📞 Je m'inscris</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- MODAL INFO -->
-  <div id="modalInfo" class="modal-overlay">
-    <div class="modal-content">
-      <div class="modal-header"><h3>💻 Informatique & IA</h3><button class="close-modal">&times;</button></div>
-      <div class="modal-body">
-        <img class="modal-img" src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=500&h=280&fit=crop" alt="Informatique">
-        <p class="modal-desc">Devenez autonome avec les outils bureautiques et l'IA générative.</p>
-        <ul class="modal-details-list">
-          <li>✅ Word : CV, rapports</li><li>✅ Excel : tableaux, formules</li><li>✅ PowerPoint pro</li><li>✅ Initiation ChatGPT</li><li>✅ Automatisation avec IA</li>
-        </ul>
-        <button class="modal-cta">📞 Je m'inscris</button>
-      </div>
-    </div>
-  </div>
-
-  <div id="modalRobot" class="modal-overlay">
-    <div class="modal-content">
-      <div class="modal-header"><h3>🤖 Robotique</h3><button class="close-modal">&times;</button></div>
-      <div class="modal-body">
-        <img class="modal-img" src="https://www.robot-magazine.fr/wp-content/uploads/2022/06/voiture-robot.png" alt="Robotique">
-        <p class="modal-desc">Montez des circuits, programmez Arduino, créez des robots mobiles.</p>
-        <ul class="modal-details-list">
-          <li>🔧 Assemblage voitures robotisées</li><li>💡 Programmation capteurs</li><li>📡 Suiveur de ligne</li><li>🏆 Projet final robot</li><li>🎯 Certification</li>
-        </ul>
-        <button class="modal-cta">📞 Je m'inscris</button>
-      </div>
-    </div>
-  </div>
-
-  <div id="modalMeca" class="modal-overlay">
-    <div class="modal-content">
-      <div class="modal-header"><h3>🔧 Mécanique</h3><button class="close-modal">&times;</button></div>
-      <div class="modal-body">
-        <img class="modal-img" src="https://www.ecoleauto.com/wp-content/uploads/2017/08/image001-2.jpg" alt="Mécanique">
-        <p class="modal-desc">Diagnostic, entretien, réparation automobile.</p>
-        <ul class="modal-details-list">
-          <li>🛠️ Outils et sécurité</li><li>🚗 Moteurs essence/diesel</li><li>🔩 Freins, vidange</li><li>✅ Atelier pratique</li><li>📋 Diagnostic électronique</li>
-        </ul>
-        <button class="modal-cta">📞 Je m'inscris</button>
+        <button class="modal-cta" data-formation-name="Pâtisserie">📞 Je m'inscris</button>
       </div>
     </div>
   </div>
@@ -395,8 +403,9 @@
   .modal-body { padding: 24px; }
   .modal-img { width: 100%; height: 180px; object-fit: cover; border-radius: 20px; margin-bottom: 20px; }
   .modal-desc { font-size: 15px; margin-bottom: 16px; font-weight: bold; color: #0a2a5e; }
-  .modal-details-list { list-style: none; }
-  .modal-details-list li { margin: 8px 0; display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.4; color: #333; }
+  .modal-details-list { list-style: none; margin: 0 0 20px 0; padding: 0; }
+  .modal-details-list li { margin: 12px 0; display: flex; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 1.5; color: #333; text-align: left; }
+  .modal-details-list li strong { color: #6a3d9a; display: block; margin-bottom: 5px; }
   .modal-cta {
     background: #f5a623;
     width: 100%;
@@ -463,18 +472,18 @@
   const phone = "237677065865";
 
   function sendWhatsApp(formationName) {
-    const text = `Je souhaite m'inscrire à CréaTech pour la formation de : ${formationName}`;
+    const text = `Je souhaite être formé à CreaTech dans le domaine de ${formationName}`;
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');
   }
 
   // Gestion des modales
   const modals = {
+    informatique: document.getElementById('modalInformatique'),
+    robotique: document.getElementById('modalRobotique'),
+    mecanique: document.getElementById('modalMecanique'),
     resine: document.getElementById('modalResine'),
-    patisserie: document.getElementById('modalPatisserie'),
-    info: document.getElementById('modalInfo'),
-    robot: document.getElementById('modalRobot'),
-    meca: document.getElementById('modalMeca')
+    patisserie: document.getElementById('modalPatisserie')
   };
 
   function openModal(modalId) {
@@ -486,11 +495,11 @@
     document.body.style.overflow = '';
   }
 
-  // Cartes cliquables
-  document.querySelectorAll('.formation-card').forEach(card => {
-    const modalRef = card.getAttribute('data-modal');
-    if(modalRef && modals[modalRef]) {
-      card.addEventListener('click', () => openModal(modalRef));
+  // Écouteurs de clic sur les cartes
+  document.querySelectorAll('.card').forEach(card => {
+    const formation = card.getAttribute('data-formation');
+    if(formation && modals[formation]) {
+      card.addEventListener('click', () => openModal(formation));
     }
   });
 
@@ -503,62 +512,67 @@
   });
 
   // Boutons "Je m'inscris" dans les modales
-  document.querySelectorAll('.modal-cta').forEach((btn, idx) => {
-    btn.addEventListener('click', () => {
-      let formationName = "";
-      const modal = btn.closest('.modal-overlay');
-      if(modal.id === 'modalResine') formationName = "Résine époxy";
-      else if(modal.id === 'modalPatisserie') formationName = "Pâtisserie";
-      else if(modal.id === 'modalInfo') formationName = "Informatique & IA";
-      else if(modal.id === 'modalRobot') formationName = "Robotique";
-      else if(modal.id === 'modalMeca') formationName = "Mécanique";
+  document.querySelectorAll('.modal-cta').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const formationName = btn.getAttribute('data-formation-name');
       if(formationName) sendWhatsApp(formationName);
       closeAllModals();
     });
   });
 
-  // Formulaire principal
+  // Programme (bouton "Voir le programme")
+  const programmeBtn = document.getElementById('voir-programme-btn');
+  if(programmeBtn) {
+    programmeBtn.addEventListener('click', () => {
+      alert("📅 Programme des formations :\n\nGroupe A : Lundi, Mercredi, Vendredi de 9h30 à 12h\n\nGroupe B : Mardi, Jeudi, Samedi de 9h30 à 12h");
+    });
+  }
+
+  // Formulaire principal (bouton "S'inscrire maintenant")
+  const inscriptionBtn = document.getElementById('main-inscription-btn');
   const formOverlay = document.getElementById('formOverlay');
   const submitFormBtn = document.getElementById('submitFormBtn');
   const closeFormBtn = document.getElementById('closeFormBtn');
 
-  document.querySelector('.btn-primary').addEventListener('click', () => {
-    formOverlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  });
-  document.querySelector('.btn-outline').addEventListener('click', () => {
-    formOverlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  });
+  if(inscriptionBtn) {
+    inscriptionBtn.addEventListener('click', () => {
+      if(formOverlay) formOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  }
 
   function closeForm() {
-    formOverlay.classList.remove('active');
+    if(formOverlay) formOverlay.classList.remove('active');
     document.body.style.overflow = '';
   }
 
-  submitFormBtn.addEventListener('click', () => {
-    const selected = document.querySelector('input[name="formationChoice"]:checked');
-    if(!selected) {
-      alert("Veuillez sélectionner une formation avant de valider.");
-      return;
-    }
-    sendWhatsApp(selected.value);
-    closeForm();
-  });
+  if(submitFormBtn) {
+    submitFormBtn.addEventListener('click', () => {
+      const selected = document.querySelector('input[name="formationChoice"]:checked');
+      if(!selected) {
+        alert("Veuillez sélectionner une formation avant de valider.");
+        return;
+      }
+      sendWhatsApp(selected.value);
+      closeForm();
+    });
+  }
 
-  closeFormBtn.addEventListener('click', closeForm);
-  formOverlay.addEventListener('click', (e) => { if(e.target === formOverlay) closeForm(); });
-  document.querySelector('.header-photo')?.addEventListener('click', () => alert("🌟 Bienvenue dans l'atelier CréaTech !"));
+  if(closeFormBtn) closeFormBtn.addEventListener('click', closeForm);
+  if(formOverlay) formOverlay.addEventListener('click', (e) => { if(e.target === formOverlay) closeForm(); });
 
   // Splash screen
   setTimeout(() => {
     const splash = document.getElementById('splash');
     const main = document.getElementById('main-content');
-    splash.classList.add('hide');
-    setTimeout(() => {
-      main.classList.add('show');
-      splash.style.display = 'none';
-    }, 900);
+    if(splash && main) {
+      splash.classList.add('hide');
+      setTimeout(() => {
+        main.classList.add('show');
+        splash.style.display = 'none';
+      }, 900);
+    }
   }, 4200);
 </script>
 </body>
